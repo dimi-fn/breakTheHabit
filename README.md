@@ -38,7 +38,7 @@ This project is about building a habit tracker.
 
 # Process
 
-* Used [excalidraw.com](https://excalidraw.com/) for the initial website design(https://excalidraw.com/#room=efb60e1251508f65083e,1WuryX5U-CiHHNIxc2vd2w) `--> to update the content`
+* Used [excalidraw.com](https://excalidraw.com/) for the [initial website design](https://excalidraw.com/#room=efb60e1251508f65083e,1WuryX5U-CiHHNIxc2vd2w) `--> to update the content`
 
 * Used project canvas via GitHub to record and track the project tasks
 
