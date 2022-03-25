@@ -2,8 +2,8 @@
 
 Contents 
 ==========================
-* [Project Description](-project-description)
-* [Website Functionality](-website-functionality)
+* [Project Description](#project-description)
+* [Website Functionality](#website-functionality)
 * [Installation & Usage](#installation--usage)
 * [Process](#process)
 * [Technologies](#technologies)
