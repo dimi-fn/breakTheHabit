@@ -33,4 +33,4 @@ Contents
 
 --------
 
-# Licenc--------e
+# Licence
