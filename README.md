@@ -3,7 +3,9 @@
 Contents 
 ==========================
 * [Project Description](#project-description)
-* [Website Functionality](#website-functionality)
+* [Functionalities](#functionalities)
+    * [Website Functionality](#website-functionality)
+    * [Technical Requirements](#technical-requirements)
 * [Installation & Usage](#installation--usage)
 * [Technologies](#technologies)
 * [Process](#process)
@@ -19,12 +21,19 @@ This project is about building a habit tracker.
 
 --------
 
-# Website Functionality
+# Functionalities
+
+## Website Functionality
 
 * Users are able to login `(?)`
 * Users are able to choose a habit they want to track (e.g water, exercise, 8 hours of sleep) and choose the frequency at which they want to track the habit `(?)`
 * Users are able to track a habit and mark it as complete for the day `(?)`
 * Users are able to see if they have completed a habit for the day and see their most recent completion streak `(?)`
+
+## Technical Requirements
+
+* Data is persisted on database `(?)`
+* Minimum 60% test coverage with an aim of 80% `(?)`
 
 --------
 
