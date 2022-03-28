@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    user_id SERIAL PRIMARY KEY,
+    user_id serial PRIMARY KEY,
     username VARCHAR (50) NOT NULL,
     email VARCHAR(50) NOT NULL UNIQUE,
     pass_digest VARCHAR(20) NOT NULL
@@ -11,7 +11,7 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS habits;
 
 CREATE TABLE habits (
-    habit_id SERIAL PRIMARY KEY,
+    habit_id serial PRIMARY KEY,
     user_id INT,
     habit_name VARCHAR(50),
     goal_freq INT,
