@@ -1,14 +1,25 @@
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR (50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    pass_digest VARCHAR(20) NOT NULL
+);
+
+
+
 DROP TABLE IF EXISTS habits;
 
 CREATE TABLE habits (
     habit_id SERIAL PRIMARY KEY,
+    user_id INT,
     habit_name VARCHAR(50),
     goal_freq INT,
+    units VARCHAR(50),
     cum_freq INT DEFAULT 0,
     progress_streak INT DEFAULT 0,
-    units VARCHAR(50),
-    habit_date DATE,
-    user_id INT,
+    habit_date DATE NOT NULL,
     FOREIGN KEY(user_id)
         REFERENCES users(user_id)
         ON DELETE SET NULL
