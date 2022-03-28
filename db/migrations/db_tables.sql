@@ -26,25 +26,26 @@ CREATE TABLE habits (
 );
 
 /*
-Example goal_freq, cum_freq, progress_streak
+Example 1: that utilizes the goal_freq, cum_freq, progress_streak
 
-* 8 glasses of water/ day
-
-* goal_fr = 8
-* cum_freq= 0 by default
-* progress_streak = 0 by default 
+* User sets on frontend the goal that wants to track e.g. 8 glasses of water. Then:
+    * goal_freq = 8
+    * cum_freq= 0 by default on the database (i.e. the user hasn't yet drunk any glass of water)
+    * progress_streak = 0 by default on the database (i.e. progress is 0% since user hasn't drunk any glass of water)
 
 ---
 
-user adds 2 glasses of water, then:
+user adds 2 glasses of water on frontend, then on the backend:
 
 * goal_fr = 8 (remains always the same if not changed by user)
-* cum_freq= 2
-* progress_streak = 1 -  ((goal_freq-cum_freq)/goal_freq) = 1 - ((8-2)/8) = 0.25 = 25%
+* cum_freq = 2 
+* progress_streak = 1 -  ((goal_freq-cum_freq)/goal_freq) = 1 - ((8-2)/8) = 0.25 --> (i.e. progress of 25% in terms of the goal_fr)
+
+Frontend will have access to the updated variables above to be utilized, e.g. a progress bar per habit of user
 
 -------
 
-Example goal_freq, cum_freq, progress_streak
+Example 2: goal_freq, cum_freq, progress_streak
 
 * 8 glasses of water/ day
 
@@ -58,10 +59,13 @@ user adds 10 glasses of water, then:
 
 * goal_fr = 8 (remains always the same if not changed by user)
 * cum_freq= 10
-* progress_streak = 1 -  ((goal_freq-cum_freq)/goal_freq) = 1 - ((8-10)/8) = 0.25 = 25%
+* progress_streak = 1 -  ((goal_freq-cum_freq)/goal_freq) = 1 - ((8-10)/8)  = 1.25 (i.e. 125%, the user has surpassed the goal)
 
-if progress_streak >=1, then "bravo, you achieved your goal"
-    * progress_streak >1
-    * (progress_streak - 1) ---> you surpassed your goal by that value
-
+* In cases like that, then this could be utlized like following:
+if (progress_streak>=1){
+    console.log("congrats, you achieved your goal")
+    if (progress_streak > 1){
+        console.log(`you surpassed your goal by ${progress_streak-1}%`)
+    }
+}
 */
