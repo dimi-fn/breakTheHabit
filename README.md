@@ -56,6 +56,8 @@ To access database:
 
 * Used project canvas via GitHub to record and track the project tasks
 
+* Used /app.dbdesigner.net/ for drawing the db schema
+
 --------
 
 # Wins & Challenges
