@@ -40,6 +40,10 @@ This project is about building a habit tracker.
 
 # Installation & Usage
 
+To access database:
+
+            docker exec -it habit_tracker_dev_db psql -U habit_tracker habit
+
 --------
 
 # Technologies
