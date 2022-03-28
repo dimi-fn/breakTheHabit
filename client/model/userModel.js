@@ -11,7 +11,7 @@ class User{
             try {
                 let newUserData = await db.query('INSERT INTO users (username,password,)')
             } catch {
-                
+                reject('User could not be created');
             }
         })
     }

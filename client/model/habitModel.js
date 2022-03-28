@@ -1,5 +1,6 @@
 class Habit{
     constructor(data){
+        this.habitId = data.habitId;
         this.habitName = data.habitName
         this.habitFrequency = data.habitFrequency
         this.habitUnit = data.habitUnit
@@ -8,7 +9,7 @@ class Habit{
     static create(habit){
         return new Promise (async (resolve,reject) => {
             try{ //To complete when db is finished
-                let newHabitData = await db.query('INSERT INTO habit ',[habit.habitName,habit.habitFrequency,habit.habitUnit,habit,habitCompletion])
+                let newHabitData = await db.query('INSERT INTO habit ',[habit.habitId,habit.habitName,habit.habitFrequency,habit.habitUnit,habit,habitCompletion])
                 resolve(newHabit)
             } catch {
                 reject('Could not add new habit')
