@@ -7,15 +7,15 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-/* setup routes */
-// users
-// const userRoutes = require('./routes/users');
-// server.use('/users', userRoutes);
+/* setup routes for users*/
+const userRoutes = require('./routes/users');
+server.use('/users', userRoutes);
+/* setup routes for users*/
 
-// habits
-// const habitRoutes = require('./routes/habits');
-// server.use('/habits', habitRoutes);
-/* setup routes */
+/* setup routes for habits*/
+const habitRoutes = require('./routes/habits');
+server.use('/habits', habitRoutes);
+/* setup routes for habits*/
 
 // send message on post 3000 upon successfull server running
 server.get('/', (req, res) => res.send('Welcome to the Habit Tracker - Grabbit!'));

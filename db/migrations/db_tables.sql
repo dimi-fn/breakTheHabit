@@ -8,7 +8,6 @@ CREATE TABLE users (
 );
 
 
-
 DROP TABLE IF EXISTS habits;
 
 CREATE TABLE habits (
