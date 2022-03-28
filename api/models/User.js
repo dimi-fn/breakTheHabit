@@ -36,6 +36,7 @@ class User{
         });
     };
 
+    // created new user
     static async create(userData){
         return new Promise (async (resolve, reject) => {
             try {
