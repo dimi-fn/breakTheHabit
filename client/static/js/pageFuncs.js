@@ -10,5 +10,5 @@ ahb.addEventListener("click", (e) => {
                         <td>${getFreq}</td>
                         <td>${getUnits}</td>
                     </tr>`
-    habitTable.innerHMTL += template;
+    ht.innerHMTL += template;
 })
