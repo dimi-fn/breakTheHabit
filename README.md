@@ -39,7 +39,7 @@ This project is about building a habit tracker.
 ## Api Endopoints
 
 **Where** | **Method** | **What** |
----------------|---------------|
+---------------|---------------|------|
 http://localhost:3000/auth/register |  `POST` | registers user |
 http://localhost:3000/auth/login |  `POST` | user log in |
 http://localhost:3000/users |  `GET` | gets all users |
