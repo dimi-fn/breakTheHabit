@@ -22,7 +22,7 @@ it("should return data for all users", async () => {
 })
 
 it('should return data for a single user', async () => {
-    const res = await request(api).get('/users/id');
+    const res = await request(api).get('/users/1');
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual({ 
         id: 1,
