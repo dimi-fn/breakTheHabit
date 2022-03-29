@@ -1,8 +1,5 @@
-.buttons {
-    background-color: rgba(0, 0, 0, 0.6);
-}
 body {
-    --color-primary: #009579;
+    --color-primary: hsl(169, 100%, 29%);
     --color-primary-dark: #007f67;
     --color-secondary: #252c6a;
     --color-error: #cc3333;
@@ -134,33 +131,4 @@ body {
 .form__link:hover {
     text-decoration: underline;
 }
-tr:nth-child(even){
-    background: #D6EEEE;
-}
-tr:nth-child(odd){
-    background: #c79f7a;
-}
-.progress{
-    height: 30px;
-    width:250px;
-    border-radius: 5px;
-    position: relative;
-    background: #ccc;
-}
-.progress .progress-fill{
-    position: absolute;
-    height: 100%;
-    background-color: #ccc012;
-    border-radius: 5px;
 
-}
-.progText{
-    font: bold 14px 'Quicksand', sans-serif;
-}
-#play-animation{
-    animation: progress-animation 3s forwards;
-}
-@keyframes progress-animation {
-    0% { width: 0%;}
-    100% {width: 100%;}
-}

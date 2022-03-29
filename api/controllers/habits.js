@@ -11,9 +11,19 @@ async function index (req, res) {
 };
 
 // show route: gets habit by id
-async function show (req, res) {
+async function showHabitbyHabitId (req, res) {
     try {
         const habit = await Habit.findByHabitId(req.params.id);
+        res.status(200).json(habit)
+    } catch(err) {
+        res.status(404).json({err})
+    }
+};
+
+// show route: gets habit by id
+async function showHabitsbyUser (req, res) {
+    try {
+        const habit = await Habit.HabitsByUserId(req.params.id);
         res.status(200).json(habit)
     } catch(err) {
         res.status(404).json({err})
@@ -42,4 +52,4 @@ async function destroy (req, res) {
 }
 }
 
-module.exports= {index, show, create, destroy};
+module.exports= {index, showHabitbyHabitId, showHabitsbyUser, create, destroy};
