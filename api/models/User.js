@@ -22,7 +22,7 @@ class User{
     };
 
         // find single user by id and return it
-      static findById(id){
+      static findUserById(id){
         return new Promise (async (resolve, reject) => {
             try {
                 let userData = await db.query(`SELECT * 
@@ -32,6 +32,22 @@ class User{
                 resolve (user);
             } catch (err) {
                 reject(`User not found, error: ${err}`);
+            }
+        });
+    };
+
+    //  return all habits per user id and return them
+     static findHabitsPerUserId(id){
+        return new Promise (async (resolve, reject) => {
+            try {
+                let habitsData = await db.query(`SELECT *
+                                                 FROM users, habits
+                                                WHERE users.user_id = habits.user_id 
+                                                AND users.user_id = $1;`, [ id ]);
+                let habitUser = new User(habitsData.rows[0]);
+                resolve (habitUser);
+            } catch (err) {
+                reject(`Habits could not be retrieved, error: ${err}`);
             }
         });
     };
