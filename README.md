@@ -43,14 +43,13 @@ This project is about building a habit tracker.
 http://localhost:3000/auth/register |  `POST` | registers user |
 http://localhost:3000/auth/login |  `POST` | user log in |
 http://localhost:3000/users |  `GET` | gets all users |
-http://localhost:3000/users/:id/habits |  `GET` | gets all habits per user id |
 http://localhost:3000/users/:id |  `GET` | gets user by user id |
 http://localhost:3000/users  |  `POST` | creates user route |
 http://localhost:3000/habits |  `GET` | gets all habits |
 http://localhost:3000/habits/:id |  `GET` | gets habit by habit id |
+http://localhost:3000/habits/user/:id |  `GET` | gets all habits per user id |
 http://localhost:3000/habits |  `POST` | creates habit route |
 http://localhost:3000/habits/:id |  `DELETE` | creates delete habit route |
-
 
 --------
 
