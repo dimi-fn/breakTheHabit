@@ -21,16 +21,16 @@ async function show (req, res) {
     }
 };
 
-// show route: gets users by id
-async function showHabitsPerUser (req, res) {
-    try {
-        // const user = await User.findById(parseInt(req.params.id));
-        const user = await User.findUservById(req.params.id);
-        res.status(200).json(user)
-    } catch(err) {
-        res.status(404).json({err})
-    }
-};
+// // show route: gets users by id
+// async function showHabitsPerUser (req, res) {
+//     try {
+//         // const user = await User.findById(parseInt(req.params.id));
+//         const user = await User.findUservById(req.params.id);
+//         res.status(200).json(user)
+//     } catch(err) {
+//         res.status(404).json({err})
+//     }
+// };
 
 /* router.post('/', userRoutes.create); // creates user post route */
 async function create (req, res) {
@@ -44,4 +44,4 @@ async function create (req, res) {
 
 
 
-module.exports= {index, show, create, showHabitsPerUser};
+module.exports= {index, show, create};

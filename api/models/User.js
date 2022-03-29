@@ -36,21 +36,21 @@ class User{
         });
     };
 
-    //  return all habits per user id and return them
-     static findHabitsPerUserId(id){
-        return new Promise (async (resolve, reject) => {
-            try {
-                let habitsData = await db.query(`SELECT *
-                                                 FROM users, habits
-                                                WHERE users.user_id = habits.user_id 
-                                                AND users.user_id = $1;`, [ id ]);
-                let habitUser = new User(habitsData.rows[0]);
-                resolve (habitUser);
-            } catch (err) {
-                reject(`Habits could not be retrieved, error: ${err}`);
-            }
-        });
-    };
+    // //  return all habits per user id and return them
+    //  static findHabitsPerUserId(id){
+    //     return new Promise (async (resolve, reject) => {
+    //         try {
+    //             let habitsData = await db.query(`SELECT *
+    //                                              FROM users, habits
+    //                                             WHERE users.user_id = habits.user_id 
+    //                                             AND users.user_id = $1;`, [ id ]);
+    //             let habitUser = new User(habitsData.rows[0]);
+    //             resolve (habitUser);
+    //         } catch (err) {
+    //             reject(`Habits could not be retrieved, error: ${err}`);
+    //         }
+    //     });
+    // };
 
     // created new user
     static async create(userData){

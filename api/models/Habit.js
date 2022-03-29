@@ -26,7 +26,7 @@ class Habit{
         });
     };
 
-        // find single habit by id and return it
+        // find single habit by habit id and return it
       static findByHabitId(id){
         return new Promise (async (resolve, reject) => {
             try {
@@ -41,6 +41,22 @@ class Habit{
         });
     };
 
+    // find habits based on user id
+    static HabitsByUserId(user_id){
+        return new Promise (async (resolve, reject) => {
+            try {
+                let habitDataByUser = await db.query(`SELECT *
+                                                        FROM habits
+                                                        WHERE user_id = $1`, [ user_id ]);
+                                                  
+                let habits = habitDataByUser.rows.map(r=> new Habit(r));
+                resolve (habits);
+            } catch (err) {
+                reject(`Habit(s) not found for that user, error: ${err}`);
+            }
+        });
+    };
+ 
     static async create(habitData){
         return new Promise (async (resolve, reject) => {
             try {
