@@ -11,7 +11,7 @@ var x = 0;
 
 function AddRow(){
 
-var AddRown = document.getElementById('show');
+var AddRown = document.getElementById('habitTable');
 var NewRow = AddRown.insertRow(n);
 
 list1[x] = document.getElementById("habit").value;
