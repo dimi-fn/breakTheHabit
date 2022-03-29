@@ -48,3 +48,4 @@ describe('habits endpoints', () => {
             });
         expect(res.statusCode).toEqual(201);
 });
+});
