@@ -33,19 +33,5 @@ describe('habits endpoints', () => {
         expect(existingUserRes.body.habits.length).toEqual(2);
     });
     
-    it('should not allow creating a habit with the same name as a previously existing one', async () => {
-        // Create a custom habit
-        const res = await request(api)
-            .post('/habits/id')
-            .send({
-                habit_id: 1,
-                habit_name: 'running',
-                goal_freq: 10,
-                units:'kilometre',
-                cum_freq:  2,
-                progress_streak: 0,
-                habit_date: 29/03/2022,
-            });
-        expect(res.statusCode).toEqual(201);
-});
+    
 });
