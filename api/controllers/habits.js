@@ -13,7 +13,7 @@ async function index (req, res) {
 // show route: gets habit by id
 async function show (req, res) {
     try {
-        const habit = await Habit.findById(req.params.id);
+        const habit = await Habit.findByHabitId(req.params.id);
         res.status(200).json(habit)
     } catch(err) {
         res.status(404).json({err})

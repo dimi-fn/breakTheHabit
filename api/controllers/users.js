@@ -14,7 +14,18 @@ async function index (req, res) {
 async function show (req, res) {
     try {
         // const user = await User.findById(parseInt(req.params.id));
-        const user = await User.findById(req.params.id);
+        const user = await User.findUserById(req.params.id);
+        res.status(200).json(user)
+    } catch(err) {
+        res.status(404).json({err})
+    }
+};
+
+// show route: gets users by id
+async function showHabitsPerUser (req, res) {
+    try {
+        // const user = await User.findById(parseInt(req.params.id));
+        const user = await User.findUservById(req.params.id);
         res.status(200).json(user)
     } catch(err) {
         res.status(404).json({err})
@@ -33,4 +44,4 @@ async function create (req, res) {
 
 
 
-module.exports= {index, show, create};
+module.exports= {index, show, create, showHabitsPerUser};

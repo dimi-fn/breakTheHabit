@@ -27,7 +27,7 @@ class Habit{
     };
 
         // find single habit by id and return it
-      static findById(id){
+      static findByHabitId(id){
         return new Promise (async (resolve, reject) => {
             try {
                 let habitData = await db.query(`SELECT * 
