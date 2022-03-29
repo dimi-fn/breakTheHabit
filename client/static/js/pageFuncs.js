@@ -1,4 +1,4 @@
-let ahb = document.getElementById("addHabitButton")
+let ahc = document.getElementById("addHabitConfirm")
 let ht = document.getElementById("habitTable")
 ahb.addEventListener("click", (e) => {
     e.preventDefault()
@@ -12,3 +12,21 @@ ahb.addEventListener("click", (e) => {
                     </tr>`
     ht.innerHMTL += template;
 })
+
+//Progress bar functions begin
+let upload = () => {
+    let progressBar = document.querySelector('.progress-fill')
+    progressBar.setAttribute('id','play-animation')
+}
+let but = document.getElementById('but')
+console.log(but)
+but.addEventListener('click', () => {
+    upload();
+})
+
+function updateProgress(progressBar, value){
+    value = Math.round(value)
+    progressBar.querySelector(".progess-fill").style.width=`${value}%`
+    progressBar.querySelector(".progess-fill").textContent=`${value}%`
+}
+//Progress bar functions end
