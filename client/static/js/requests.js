@@ -1,45 +1,38 @@
-
-// Create user
-
-
-
-
-
-
-async function getAll(username){
+// get all users or habits
+// change category to "users" or "habits"
+async function getAll(category){
     try {
-        const response = await fetch(`http://localhost:3000/users`);
+        const response = await fetch(`http://localhost:3000/${category}`);
         const data = await response.json()
         return data;
     } catch (err) {
         console.warn(err);
     }
 }
-// all users
 
-async function getUserById(username, id) {
+// get all habits per unique user id
+async function getHabitsOfUser(id) {
     try {
-        const response = await fetch(`http://localhost:3000/${users}/${id}`);
+      const response = await fetch(`http://localhost:3000/habits/user/${id}`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+// get user or habit by id
+async function getItem(category, id) {
+    try {
+        const response = await fetch(`http://localhost:3000/${category}/${id}`);
         const data = await response.json();
         return data;
     } catch (err) {
         console.warn(err);
     }
 }
-// get user by id
 
-async function getHabit(habit) {
-    try {
-        const response = await fetch(`http://localhost:3000/habits`);
-        const data = await response.json();
-        return data;
-    } catch (err) {
-        console.warn(err);
-    }
-}
-// all habits
-
-async function createHabit(e){
+async function postHabit(e){
     e.preventDefault();
     try {
         const options = {
@@ -60,16 +53,12 @@ async function createHabit(e){
     }
 }
 
-// create a habit
-
-
 async function deleteHabit(id){
     try {
         const options = { method: 'DELETE' }
         await fetch(`http://localhost:3000/habits/${id}`, options);
-        window.location.hash = `#habits`
+        window.location.hash = `#books`
     } catch (err) {
         console.warn(err);
     }
 }
-// delete a habit
