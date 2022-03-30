@@ -25,7 +25,7 @@ it('should return data for a single user', async () => {
     const res = await request(api).get('/users/1');
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual({ 
-        id: 1,
+        user_id: 1,
         email: "testUser1@email.com",
         pass_digest: "password",
         username: "test user 1",
