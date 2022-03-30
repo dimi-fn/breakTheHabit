@@ -15,7 +15,7 @@ const testHabit ={
     units:'kilometre',
     cum_freq:  2,
     progress_streak: 0,
-    habit_date: 29/03/2022,
+    habit_date: 29-03-2022,
 }
 
 describe('Habit controller', () => {
@@ -42,7 +42,7 @@ describe('Habit controller', () => {
                 units:'kilometre',
                 cum_freq:  2,
                 progress_streak: 0,
-                habit_date: 29/03/2022,
+                habit_date: 29-03-2022,
             }
             jest.spyOn(Habit, 'findById')
                 .mockResolvedValue(new Habit(testHabit));
@@ -63,7 +63,7 @@ describe('Habit controller', () => {
                 units:'kilometre',
                 cum_freq:  2,
                 progress_streak: 0,
-                habit_date: 29/03/2022,
+                habit_date: 29-03-2022,
             }
             jest.spyOn(Habit, 'create')
                 .mockResolvedValue(new Habit(testHabit));
