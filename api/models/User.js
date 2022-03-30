@@ -63,10 +63,14 @@ class User{
                 .........              
                 */
                 const { username, email, pass_digest} = userData;
-                let result= await db.query(`INSERT INTO users (username, email, pass_digest)    
+
+                let result = await db.query(`INSERT INTO users (username, email, pass_digest)    
                 VALUES($1, $2, $3) RETURNING *;`,[username, email, pass_digest]);
-                console.log(result)                
-                resolve (result.rows[0]);
+ 
+                let newUser = new User(result.rows[0]);             
+                console.log(newUser)
+                resolve (newUser);
+
             } catch (err) {
                 reject(`User could not be created, error: ${err}`);
             }
