@@ -38,7 +38,7 @@ document.querySelector("#linkLogin").addEventListener("click", e => {
 loginForm.addEventListener("submit", e => {
     e.preventDefault();
     // Perform your AJAX or Fetch login
-    fetch(`${protocol}//3000/login`, {
+    fetch(`http://localhost:3000/auth/login`, {
         "method": 'POST',
         "headers": {
           'Accept': 'application/json',
@@ -97,7 +97,7 @@ createAccountForm.addEventListener('submit', e => {
                 body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
             }
             
-            const response = await fetch('http://localhost:3000/register', options);
+            const response = await fetch('http://localhost:3000/auth/register', options);
             const { userData, err } = await response.json();
             if(err) { 
                 throw Error(err) 
@@ -123,3 +123,23 @@ document.querySelectorAll(".form__input").forEach(inputElement => {
     });
 });
 });
+async function createUser(e){
+    e.preventDefault();
+    try {
+        const options = {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+        }
+        
+        const response = await fetch('http://localhost:3000/auth/register', options);
+        const { id, err } = await response.json();
+        if(err) { 
+            throw Error(err) 
+        } else {
+            window.location.hash = `#users/${id}`
+        }
+    } catch (err) {
+        console.warn(err);
+    }
+}
