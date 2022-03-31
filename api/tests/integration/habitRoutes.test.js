@@ -16,7 +16,7 @@ describe('habits endpoints', () => {
 
     it('should create a new habit for an existing user', async () => {
         const res = await request(api)
-            .post('/habits/id')
+            .post('/habits/user/1')
             .send({
                 habit_id: 1,
                 habit_name: 'running',
