@@ -92,28 +92,25 @@ createAccountForm.addEventListener('submit', async e => {
         e.preventDefault();
         try {
 
-            const test = {username:e.target[0].value, email: e.target[1].value, password: e.target[2].value};
-            console.log(test)
+            const data = {username:e.target[0].value, email: e.target[1].value, password: e.target[2].value};
+            console.log(data)
 
             const options = {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(test)
-            }
-            
-           
-            
+                body: JSON.stringify(data)
+            } 
 
             const response = await fetch('http://localhost:3000/auth/register', options);
             const userData = await response.json();
             console.log(userData)
 
-                // window.location.hash = `#users/${userData['user_id']}`
-                window.location.href = "/habits.html"
-                
+            // window.location.hash = `#users/${userData['user_id']}`
+            window.location.href = "/habits.html"
+            
             }
          catch (err) {
-            console.warn(err);
+            console.warn(`User registration failed: error: ${err}`);
         }
     }
     createUser(e)
