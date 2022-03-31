@@ -1,4 +1,5 @@
 const habitButton = document.getElementById("addHabitBtn")
+const serverPath = `http://localhost:3000`;
 
 var list1 = [], list2 = [], list3 = [], list4 = [], list5 = [];
 
@@ -79,3 +80,68 @@ logoutBtn.addEventListener('click', () => {
     localStorage.clear();
 })
 
+/*
+const addHabitForBackEnd = document.getElementById("addHabitBtn");
+addHabitForBackEnd.addEventListener("submit", submitHabits);
+
+// Create a new post
+
+async function submitHabits(e)
+{
+    e.preventDefault();
+
+    let habitName = document.getElementById("habit").value;
+    let goalFreq = document.getElementById("frequency").value;
+    let units = document.getElementById("units").value;
+    console.log(habitName, goalFreq, units);
+
+   
+    // const habitData = {user_id =   }
+
+
+
+    if (typeof(goalFreq)!==number)
+    {
+        window.alert(`Value ${goalFreq} was given. Please insert a number instead!`);
+    }
+   
+    // else if post validation is successful:
+    else
+    {
+        try
+        {
+            const options = 
+            { 
+            method: 'POST', 
+            headers: {"Content-Type" : "application/json"}, 
+            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            };
+
+            const response = await fetch (`{serverPath}/habits`,options);
+            console.log(response)
+            const data = await response.json();
+            
+
+            if(data.err)
+            {
+                throw Error(data.err)
+            }
+            else
+            {
+                // redirect to the post hash
+                window.location.hash = `#${data.id}`;
+                console.log(`"window.location.hash" is: ${window.location.hash}`);
+                console.log(`"window.location.hash.substring(1)" is: ${window.location.hash.substring(1)}`);             
+                console.log("Data from JSON response is:")
+                console.log(data)
+                
+            }
+        }
+        catch (err)
+        {
+            console.log("Failed to create post :" +err);
+            alert("Failed to create post:" +err);
+        }
+    }
+}
+*/
