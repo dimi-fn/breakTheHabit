@@ -1,11 +1,11 @@
 .container{
     border-radius: 5px;
-    background-color: rgb(122, 136, 134);
+    background-color: rgb(153, 171, 168);
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    
+    font-family: 'Patrick Hand', cursive;
   }
 
   input {
@@ -19,7 +19,7 @@
     resize: vertical;
   }
 
-  #btn{
+  #addHabitBtn{
     cursor: pointer;
     background-color: hsl(169, 100%, 29%);
   }
@@ -37,3 +37,16 @@
   height: 50px;
   }
 
+  #habitTable{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    font-family: 'Boogaloo', cursive;
+  }
+
+  #habit-table thead tr {
+    background-color: #009879;
+    color: #fff;
+    text-align: center;
+  }
