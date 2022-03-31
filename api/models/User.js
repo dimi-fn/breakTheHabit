@@ -78,11 +78,11 @@ class User{
     };
 
     // utilized in controllers/auth.js
-    static findByEmail(email){
+    static findByUsername(name){
         return new Promise(async (res, rej) => {
             try {
-                let result = await db.run(SQL`SELECT * FROM users
-                                                WHERE email = $1;`, [email]);
+                let result = await db.query(`SELECT * FROM users
+                                                WHERE username = $1;`, [name]);
                 let user = new User(result.rows[0])
                 res(user)
             } catch (err) {

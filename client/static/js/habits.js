@@ -12,7 +12,7 @@ function calcProg(goal_freq,cum_freq){
 }
 
 function AddRow(){
-
+    
     let progPercVal = 0, progVal = 0;    
 
     var AddRown = document.getElementById('habitTable');
@@ -79,26 +79,3 @@ logoutBtn.addEventListener('click', () => {
     localStorage.clear();
 })
 
-// const formEl = document.querySelector('form');
-// const tbodyEl = document.getElementById('tbody');
-// function onAddWebsite(e){
-//     e.preventDefault();
-//     const habbit = document.getElementById("habit")
-//     const freq = document.getElementById("frequency").value;
-//     const unit = document.getElementById("units").value;
-//     const time = document.getElementById("time").value;
-//     tbodyEl.innerHTML +=`
-//      <tr>
-//          <td>${Add habit}</td>
-//          <td>${Choose your goal frequency with a number}</td>
-//          <td>${Choose Units}</td>
-//          <td>${Choose period of time}</td>
-//          <td><button class = "DEL">Delete</button></td>
-
-//      </tr>
-//      `;
-
-
-// }
-
-// habitButton.addEventListener("click", onAddWebsite);
