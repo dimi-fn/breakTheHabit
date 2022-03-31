@@ -6,6 +6,7 @@ Contents
 * [Functionalities](#functionalities)
     * [Website Functionality](#website-functionality)
     * [Technical Requirements](#technical-requirements)
+    * [Api Endpoints](#api-endopoints)
 * [Installation & Usage](#installation--usage)
 * [Technologies](#technologies)
 * [Process](#process)
@@ -35,10 +36,28 @@ This project is about building a habit tracker.
 * Data is persisted on database `(?)`
 * Minimum 60% test coverage with an aim of 80% `(?)`
 
+## Api Endopoints
+
+**Where** | **Method** | **What** |
+---------------|---------------|------|
+http://localhost:3000/auth/register |  `POST` | registers user |
+http://localhost:3000/auth/login |  `POST` | user log in |
+http://localhost:3000/users |  `GET` | gets all users |
+http://localhost:3000/users/:id |  `GET` | gets user by user id |
+http://localhost:3000/users  |  `POST` | creates user route |
+http://localhost:3000/habits |  `GET` | gets all habits |
+http://localhost:3000/habits/:id |  `GET` | gets habit by habit id |
+http://localhost:3000/habits/user/:id |  `GET` | gets all habits per user id |
+http://localhost:3000/habits |  `POST` | creates habit route |
+http://localhost:3000/habits/:id |  `DELETE` | creates delete habit route |
 
 --------
 
 # Installation & Usage
+
+To access database:
+
+            docker exec -it habit_tracker_dev_db psql -U habit_tracker habit
 
 --------
 
@@ -51,6 +70,8 @@ This project is about building a habit tracker.
 * Used [excalidraw.com](https://excalidraw.com/) for the [initial website design](https://excalidraw.com/#room=efb60e1251508f65083e,1WuryX5U-CiHHNIxc2vd2w) `--> to update the content`
 
 * Used project canvas via GitHub to record and track the project tasks
+
+* Used /app.dbdesigner.net/ for drawing the db schema
 
 --------
 
