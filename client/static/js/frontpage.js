@@ -105,8 +105,12 @@ createAccountForm.addEventListener('submit', async e => {
             const userData = await response.json();
             console.log(userData)
 
+            // localstorage
+            
             // window.location.hash = `#users/${userData['user_id']}`
             window.location.href = "/habits.html"
+            
+            
             
             }
          catch (err) {
@@ -118,8 +122,8 @@ createAccountForm.addEventListener('submit', async e => {
 
 document.querySelectorAll(".form__input").forEach(inputElement => {
     inputElement.addEventListener("blur", e => {
-        if (e.target.id === "regUser" && e.target.value.length > 0 && e.target.value.length < 5) {
-            setInputError(inputElement, "Username must be at least 5 characters in length");
+        if (e.target.id === "regUser" && e.target.value.length > 0 && e.target.value.length < 4) {
+            setInputError(inputElement, "Username must be at least 4 characters in length");
         }
     });
 
