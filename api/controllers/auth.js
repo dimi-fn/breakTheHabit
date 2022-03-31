@@ -20,12 +20,81 @@ async function register(req, res){
 
 
 async function login(req,res){
+
+    let user;
+
     try {
-        const user = await User.findByEmail(req.body.email)
-        if(!user){ throw new Error('No user with this email') }
-        const authed = bcrypt.compare(req.body.password, user.passwordDigest)
-        if (!!authed){
+        user = await User.findByUsername(req.body.username)
+
+        if (user) {
+            console.log(`User: ${user} found!`)
+        }
+
+        else {
+            console.log("Login error, invalid details");
+            res.status(401).json({ err });
+        }
+
+        const authed = bcrypt.compare(req.body.password, user.pass_digest)
+        // const authed = bcrypt.compare(req.body.password, user.passwordDigest)
+        // console.log(authed);
+
+        if (authed){
+            console.log("Auth is successful and logging in now...")
+            // res.status(200).json({ user: user.username })
+            // res.status(200).send({ user: user.username })
+            res.status(200).send(user)
+        }
+        else {
+            throw new Error ('Auth failed!');
+        }
+
+    }
+    catch(err)
+    {
+        console.log("something went wrong..");
+        res.status(401).json({err});
+    }
+
+}
+
+
+
+// async function login(req,res){
+//     let user;
+
+//     try {
+//         user = await User.findByUsername(req.body.username)
+//         if(!user){ throw new Error('No user with this username') }
+//         const authed = bcrypt.compare(req.body.password, user.pass_digest)
+//         if (!!authed){
+//             res.status(200).json({ user: user.username })
+//         } else {
+//             throw new Error('User could not be authenticated')  
+//         }
+//     } catch (err) 
+//     {
+//         console.log(`Login failed for reason: ${err}`);
+//     }
+
+// }
+
+/*
+
+        
+        if(!user){ throw new Error('No user with this username') }
+
+        const authed = bcrypt.compare(req.body.password, user.pass_digest)
+        // const authed = bcrypt.compare(req.body.password, user.passwordDigest)
+        console.log(authed)
+
+        if (authed){
+            console.log(`Auth was successfull for user: ${user.username}`)
+            res.status(201).send(user);
+
+        } else if (!!authed){
             res.status(200).json({ user: user.username })
+
         } else {
             throw new Error('User could not be authenticated')  
         }
@@ -33,6 +102,7 @@ async function login(req,res){
         res.status(401).json({ err });
     }
 };
+*/
 
 
 module.exports = {register, login};
