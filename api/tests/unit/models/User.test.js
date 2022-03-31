@@ -1,23 +1,14 @@
 const User = require("../../../models/User");
-const { initConnection } = require("../../../dbConfig/init");
+// const { initConnection } = require("../../../dbConfig/init");
+const pg = require('pg');
+const db = require('../../../dbConfig/init')
 jest.mock("pg");
 
 describe("User", () => {
-  let connection;
-  let db;
 
-  beforeAll(async () => {
-    connection = await initConnection();
-    db = connection.db(process.env.DB_NAME);
-  });
+  beforeEach(() => jest.clearAllMocks())
 
-  afterAll(async () => {
-    await connection.close();
-  });
-
-  beforeEach(async () => {
-    await resetTestDB();
-  });
+  afterAll(() => jest.resetAllMocks())
 
   describe("all", () => {
     it("should resolve with all users on successful db query", async () => {
@@ -34,16 +25,13 @@ describe("User", () => {
             password: "password",
             username: "test user 2"
         }
-        const user = await User.create(data);
-        const users = await User.all;
-        expect(user).toHaveProperty('user_id');
-        expect(user).toHaveProperty('email');
-        expect(user).toHaveProperty('pass_digest');
-        expect(user).toHaveProperty('username');
-        expect(users.all.length).toEqual(4);
+        jest.spyOn(db,'query')
+        .mockResolvedValueOnce({rows: [ data] });
+        const result = await User.create('New User');
+        expect(result).toBeInstanceOf(User)
     });
 
-    describe('findById', () => {
+    describe('findUserById', () => {
         it('should resolve with a user on successful db query', async () => {
             const userData = new User({
                 user_id: 1,
@@ -51,16 +39,13 @@ describe("User", () => {
                 pass_digest: "password",
                 username: "test user 1",
             });
-            const user = await User.findByEmail("testUser1@email.com");
-            expect(user).toEqual(userData);
-            expect(user).toBeInstanceOf(User);
+            jest.spyOn(db, 'query')
+            .mockResolvedValueOnce({rows: [ userData] });
+        const result = await User.findUserById(1);
+        expect(result).toBeInstanceOf(User)
         });
     });
 });
-
-
-
-
 
 
 
