@@ -68,10 +68,11 @@ class Habit{
                 */
                 const {user_id, habit_name, goal_freq, units, cum_freq, progress_streak, habit_date} = habitData;
 
-                let result = await db.query(`INSERT INTO habits (user_id, habit_name, goal_freq,units,cum_freq, progress_streak, habit_date ) VALUES($1, $2, $3, $4,$5, $6, $7) RETURNING *;`, [user_id, habit_name, goal_freq, units, cum_freq, progress_streak, habit_date]);
+                let result = await db.query(`INSERT INTO habits (user_id, habit_name, goal_freq,units,cum_freq, progress_streak, habit_date ) VALUES($1, $2, $3, $4,$5, $6, $7) RETURNING *;`, [user_id, habit_name, goal_freq, units, cum_freq, progress_streak, habit_date]);       
 
-                console.log(result);               
-                resolve (result.rows[0]);
+                let newHabit = new Habit(result.rows[0]);
+                console.log(newHabit);
+                resolve (newHabit);
             } catch (err) {
                 reject(`Habit could not be created, error: ${err}`);
             }
