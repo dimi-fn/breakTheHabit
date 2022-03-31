@@ -1,3 +1,7 @@
+// connecting to server
+// change based on deployment
+const serverPath = `http://localhost:3000`;
+
 const protocol = window.location.protocol;
 const host = window.location.host;
 
@@ -35,37 +39,60 @@ document.querySelector("#linkLogin").addEventListener("click", e => {
     createAccountForm.classList.add("form--hidden");
 });
 
-loginForm.addEventListener("submit", e => {
+loginForm.addEventListener("submit", async e => {
     e.preventDefault();
-    // Perform your AJAX or Fetch login
-    fetch(`http://localhost:3000/auth/login`, {
-        "method": 'POST',
-        "headers": {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        "body": JSON.stringify({username: loginUser.value, password: loginPass.value})
-    })
-    .then(resp => {
-        console.log(`Our res code is ${resp.status}`)
-        if (resp.status == 200) { 
-            err.innerHTML=""
-            localStorage.setItem('username', loginUser.value);
-            localStorage.setItem('password', loginPass.value);
-            window.location.href="/"
-            document.querySelector('#checkUserLog').innerHTML = `You are logged in as ${loginUser.value}`
-        }
-        else if (resp.status == 403) {
-            err.innerHTML="Wrong password"
-        }
-        else if (resp.status == 401) {
-            err.innerHTML = `User ${loginUser.value} does not exist. Please create an account`
-        }
     
-    })
+    async function loginUser(e){
+        e.preventDefault();
+        try{
+        
+            const loginData = {username:e.target[0].value, password: e.target[1].value};
+            console.log(loginData)
 
-    setFormMessage(loginForm, "error", "Invalid username/password combination");
-});
+            const options = {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(loginData)
+            }
+            
+            const response = await fetch(`${serverPath}/auth/login`, options);
+            const data = await response.json();
+            console.log(data);
+
+            // if (data.err){ throw Error(data.err); }
+            
+            if (response.status == 200) { 
+            // if (data.success) {                        
+                console.log(`User ${e.target[0].value} has registered`)
+                // err2.innerHTML=""
+                localStorage.setItem('username', e.target[0].value);
+                localStorage.setItem('password',  e.target[1].value);
+                /*document.querySelector('#checkUserLog').innerHTML = `You are logged in as ${e.target[0].value}`*/
+                window.location.href = "/habits.html";
+                return true
+            }
+
+            else if (response.status == 401){
+                document.querySelector('#checkUserLog').innerHTML = `Wrong username or password! Try again!`
+            }
+
+            // } else if (response.status ==401) {
+            //     err2.innerHTML=`Username ${e.target[0].value} already exists. Choose a unique one`
+            // } 
+            // return false;
+
+            //localstorage
+            // localStorage.setItem('username', e.target[0].value);
+            // localStorage.setItem('password', e.target[1].value);
+            
+        }
+        catch (err) {
+            console.warn(`User login failed: error: ${err}`);
+            setFormMessage(loginForm, "error", "Invalid username or password! Please try again!");
+        }
+    }
+    loginUser(e)
+})
 
 createAccountForm.addEventListener('submit', async e => {
     e.preventDefault()
@@ -92,16 +119,16 @@ createAccountForm.addEventListener('submit', async e => {
         e.preventDefault();
         try {
 
-            const data = {username:e.target[0].value, email: e.target[1].value, password: e.target[2].value};
-            console.log(data)
+            const registrationData = {username:e.target[0].value, email: e.target[1].value, password: e.target[2].value};
+            console.log(registrationData)
 
             const options = {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
+                body: JSON.stringify(registrationData)
             } 
 
-            const response = await fetch('http://localhost:3000/auth/register', options);
+            const response = await fetch(`${serverPath}/auth/register`, options);
             const userData = await response.json();
             console.log(userData)
 
@@ -110,7 +137,7 @@ createAccountForm.addEventListener('submit', async e => {
             localStorage.setItem('password', e.target[1].value);
             
             // window.location.hash = `#users/${userData['user_id']}`
-            window.location.href = "/habits.html"
+            window.location.href = "/habits.html";
             
             }
          catch (err) {
