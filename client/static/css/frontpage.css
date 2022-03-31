@@ -1,5 +1,5 @@
 body {
-    --color-primary: hsl(169, 100%, 29%);
+    --color-primary: #557A95;
     --color-primary-dark: #007f67;
     --color-secondary: #252c6a;
     --color-error: #cc3333;
@@ -48,6 +48,7 @@ body {
 .form__title {
     margin-bottom: 2rem;
     text-align: center;
+    color: #0f0700;
 }
 
 .form__message {
@@ -131,4 +132,3 @@ body {
 .form__link:hover {
     text-decoration: underline;
 }
-
