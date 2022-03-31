@@ -91,6 +91,8 @@ To access database:
 
 -------
 
-# [MIT Licence]()
+# MIT Licence
+
+* [MIT Licence](https://github.com/dimi-fn/breakTheHabit/blob/main/LICENCE)
 
 
