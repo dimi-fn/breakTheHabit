@@ -106,11 +106,11 @@ createAccountForm.addEventListener('submit', async e => {
             console.log(userData)
 
             // localstorage
+            localStorage.setItem('username', e.target[0].value);
+            localStorage.setItem('password', e.target[1].value);
             
             // window.location.hash = `#users/${userData['user_id']}`
             window.location.href = "/habits.html"
-            
-            
             
             }
          catch (err) {
