@@ -67,7 +67,7 @@ loginForm.addEventListener("submit", e => {
     setFormMessage(loginForm, "error", "Invalid username/password combination");
 });
 
-createAccountForm.addEventListener('submit', e => {
+createAccountForm.addEventListener('submit', async e => {
     e.preventDefault()
     // fetch(`/auth/register`, {
     //     "method": 'POST',
@@ -91,20 +91,28 @@ createAccountForm.addEventListener('submit', e => {
     async function createUser(e){
         e.preventDefault();
         try {
+
+            const test = {username:e.target[0].value, email: e.target[1].value, password: e.target[2].value};
+            console.log(test)
+
             const options = {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+                body: JSON.stringify(test)
             }
             
+           
+            
+
             const response = await fetch('http://localhost:3000/auth/register', options);
-            const { userData, err } = await response.json();
-            if(err) { 
-                throw Error(err) 
-            } else {
-                window.location.hash = `#users/${userData.id}`
+            const userData = await response.json();
+            console.log(userData)
+
+                // window.location.hash = `#users/${userData['user_id']}`
+                window.location.href = "/habits.html"
+                
             }
-        } catch (err) {
+         catch (err) {
             console.warn(err);
         }
     }
@@ -113,8 +121,8 @@ createAccountForm.addEventListener('submit', e => {
 
 document.querySelectorAll(".form__input").forEach(inputElement => {
     inputElement.addEventListener("blur", e => {
-        if (e.target.id === "regUser" && e.target.value.length > 0 && e.target.value.length < 10) {
-            setInputError(inputElement, "Username must be at least 10 characters in length");
+        if (e.target.id === "regUser" && e.target.value.length > 0 && e.target.value.length < 5) {
+            setInputError(inputElement, "Username must be at least 5 characters in length");
         }
     });
 
@@ -123,23 +131,23 @@ document.querySelectorAll(".form__input").forEach(inputElement => {
     });
 });
 });
-async function createUser(e){
-    e.preventDefault();
-    try {
-        const options = {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
-        }
+// async function createUser(e){
+//     e.preventDefault();
+//     try {
+//         const options = {
+//             method: 'POST',
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+//         }
         
-        const response = await fetch('http://localhost:3000/auth/register', options);
-        const { id, err } = await response.json();
-        if(err) { 
-            throw Error(err) 
-        } else {
-            window.location.hash = `#users/${id}`
-        }
-    } catch (err) {
-        console.warn(err);
-    }
-}
+//         const response = await fetch('http://localhost:3000/auth/register', options);
+//         const { id, err } = await response.json();
+//         if(err) { 
+//             throw Error(err) 
+//         } else {
+//             window.location.hash = `#users/${id}`
+//         }
+//     } catch (err) {
+//         console.warn(err);
+//     }
+// }
