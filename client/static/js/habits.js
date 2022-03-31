@@ -7,7 +7,7 @@ var n = 1, x = 0;
 // async function addRowAndSubmitHabits
 
 function calcProg(goal_freq,cum_freq){
-    let n = Math.round(((goal_freq-cum_freq)/goal_freq))
+    let n = Math.round(1-((goal_freq-cum_freq)/goal_freq))
     return n;
 }
 
