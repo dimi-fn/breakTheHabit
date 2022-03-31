@@ -15,12 +15,22 @@
 <body>
   <div class="container">
 		<label for="habit">Add a habit:</label>
-		<input type="text"  id="habit">
-		<label for="frequency">Choose frequency:</label>
-		<input type="text"  id="frequency">
-		<label for="units">Choose units:</label>
-		<input type="text"  id="units">
-		<input type="button" name="button" id="addHabitButton" value="Add Habit">
+		<input type="text"  id="habit" name="habit" placeholder="Your habit..." required>
+
+		<label for="frequency">Choose your goal frequency with a number:</label>
+		<input type="text"  id="frequency" name="frequency" placeholder="E.g. 3, 5, 10">
+		
+    <label for="units">Choose units:</label>
+    <input type="text"  id="units" name="units" placeholder="E.g. glasses, miles, kilometers">
+
+    <label for="time">Per: (Choose period of time)</label>
+    <input type="text"  id="time" name="time" placeholder="E.g. days, weeks">
+
+
+
+    
+		<input type="button" name="button" id="btn" value="Add Habit">
+
 	</div>
 
   <table id="habitTable">
@@ -28,6 +38,7 @@
         <td>Habit</td>
         <td>Frequency</td>
         <td>Units</td>
+        <td>Per</td>
     </tr>
 
   </table>
