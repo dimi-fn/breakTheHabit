@@ -17,6 +17,9 @@ const habitRoutes = require('./routes/habits');
 server.use('/habits', habitRoutes);
 /* setup routes for habits*/
 
+const authRoutes = require('./routes/auth');
+server.use('/auth', authRoutes);
+
 // send message on post 3000 upon successfull server running
 server.get('/', (req, res) => res.send('Welcome to the Habit Tracker - Grabbit!'));
 
