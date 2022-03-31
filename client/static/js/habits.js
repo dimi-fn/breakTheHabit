@@ -1,4 +1,5 @@
-const serverPath = `http://localhost:3000`;
+/* const serverPath = `http://localhost:3000`;*/
+const serverPath = `https://trackyourhabits.herokuapp.com`;
 
 const habitButton = document.getElementById("addHabitBtn")
 

@@ -1,6 +1,7 @@
 // connecting to server
 // change based on deployment
-const serverPath = `http://localhost:3000`;
+// const serverPath = `http://localhost:3000`;
+const serverPath = `https://trackyourhabits.herokuapp.com`;
 
 const protocol = window.location.protocol;
 const host = window.location.host;
