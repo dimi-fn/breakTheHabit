@@ -24,7 +24,7 @@ describe('habits endpoints', () => {
                 units:'kilometre',
                 cum_freq:  2,
                 progress_streak: 0,
-                habit_date: 29-03-2022,
+                habit_date: '29-03-2022',
             });
         expect(res.statusCode).toEqual(201);
     
@@ -49,7 +49,7 @@ describe('habits endpoints', () => {
                 units:'kilometre',
                 cum_freq:  2,
                 progress_streak: 0,
-                habit_date: 28-03-2022
+                habit_date: '28-03-2022'
             })
         expect(res.statusCode).toEqual(422);
         expect(res.body).toHaveProperty("err");
@@ -68,3 +68,4 @@ describe('habits endpoints', () => {
         expect(habitRes.body).toHaveProperty('err');
     }); 
 });
+
