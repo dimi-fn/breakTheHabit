@@ -56,7 +56,7 @@ This project is about building a habit tracker where users can post their habits
 
 ## Server
 
-### Api Endopoints
+### Api End-points
 
 ------
 
@@ -82,21 +82,21 @@ http://localhost:3000/habits/:id |  `DELETE` | creates delete habit route |
     * run the docker container which will install all npm packages and dependencies, will seed the database, and will run the server using nodemon
     * start the api and database services that will run and seed the postgreSQL database
     * serve the server on port 3000 (http://localhost:3000)
-* Similarly, run `bash _scripts/starTest.sh` to run the tests      
+* Similarly, run `bash _scripts/startTest.sh` to run the tests      
 
 ### Stop the server
 
 * In order to just stop the server:
     * In the same terminal type `ctrl+c`, or
     * Open another terminal, navigate to the root project directory and run `bash _scripts/stopContainer.sh`
-* In order to both stop the server and teardown by removing all running services in containers as well as by removing volumes, run `bash _scripts/tearDown.sh`    
+* In order to both stop the server and teardown by removing all running services in containers as well as removing volumes, run `bash _scripts/tearDown.sh`    
 
 
 ## Database
 
 To enter the postgreSQL database:
-* first have the docker running based on the commands of the 'server' section
-* open another terminal, navigate to the root project, and run:
+* First have the docker running based on the commands of the 'server' section
+* Open another terminal, navigate to the root project, and run:
     
         docker exec -it habit_tracker_dev_db psql -U habit_tracker habit
 
