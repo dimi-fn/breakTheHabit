@@ -1,5 +1,7 @@
 # Habit Tracker
 
+Contributors: [](), [](), [](), [](),
+
 Contents 
 ==========================
 * [Project Description](#project-description)
@@ -18,7 +20,7 @@ Contents
 
 # Project Description
 
-This project is about building a habit tracker.
+This project is about building a habit tracker where users can post their habits and track their progress in achieving their habit goals.
 
 --------
 
