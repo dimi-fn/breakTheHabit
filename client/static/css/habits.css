@@ -117,3 +117,10 @@ label {
 #addHabitBtn{
   font-size: 20px;
 }
+
+
+#showUsername{
+  text-align: center;
+  font-size: large;
+  font-weight:bolder;
+}

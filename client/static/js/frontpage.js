@@ -159,6 +159,29 @@ document.querySelectorAll(".form__input").forEach(inputElement => {
     });
 });
 });
+
+
+// function login(data){
+//     localStorage.setItem('username', data.user);
+//     location.hash = '#feed';
+// }
+
+// function logout(){
+//     localStorage.clear();
+//     location.hash = '#login';
+// }
+
+// function currentUser(){
+//     const username = localStorage.getItem('username')
+//     return username;
+// }
+
+// let greeting = document.querySelector('#showUsername')
+//     if (greeting){
+//         greeting.textContext = `You are now logged in as ${localStorage.getItem('username')}`
+//         console.log(localStorage.getItem('username'))
+//     };
+
 // async function createUser(e){
 //     e.preventDefault();
 //     try {
