@@ -31,9 +31,8 @@ This project is about building a habit tracker where users can post their habits
 # Process
 
 * [Used excalidraw.com for the initial website design ](https://github.com/dimi-fn/breakTheHabit/blob/main/client/img/excalidraw.png), [layout](https://github.com/dimi-fn/breakTheHabit/blob/main/client/img/layout.png)
-* [Used project canvas via GitHub to record and track the project tasks]()
+* [Used kanban board via GitHub to record and track the project tasks](https://github.com/dimi-fn/breakTheHabit/projects/1)
 * [Used /app.dbdesigner.net/ for drawing the db schema](https://github.com/dimi-fn/breakTheHabit/blob/main/client/img/schema.PNG)
-* [Used project canvas via github](https://github.com/dimi-fn/breakTheHabit/projects/1)
 
 -----
 
