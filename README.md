@@ -56,7 +56,7 @@ This project is about building a habit tracker where users can post their habits
 
 ## Server
 
-### Api End-points
+### Api Endpoints
 
 ------
 
