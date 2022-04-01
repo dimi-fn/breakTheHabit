@@ -11,7 +11,7 @@ Contents
   * [Technical Requirements](#technical-requirements)
 * [Installation & Usage](#installation--usage)
   * [Server](#server)
-    * [Api Endpoints](#api-endopoints)
+    * [Api Endpoints](#api-endpoints)
     * [Run the Server](#run-the-server)
     * [Stop the Server](#stop-the-server)
   * [Database](#database)
