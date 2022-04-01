@@ -40,7 +40,7 @@ This project is about building a habit tracker where users can post their habits
 
 ## Website Functionality
 
-* Users are able to login 
+* Users are able to register and login 
 * Users are able to choose a habit they want to track (e.g water, exercise, 8 hours of sleep) and choose the frequency at which they want to track the habit 
 * Users are able to track a habit and see their progress as long as they provide updates about their habit current state
 
