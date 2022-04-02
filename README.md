@@ -81,7 +81,7 @@ http://localhost:3000/habits/:id |  `DELETE` | creates delete habit route |
 * Use the project files by cloning (with `git clone`) or by downloading the repo files
 * Open a terminal, navigate to the root project directory and run `bash _scripts/startDevContainer.sh` to:
     * run the docker container which will install all npm packages and dependencies, will seed the database, and will run the server using nodemon
-    * start the api and database services that will run and seed the postgreSQL database
+    * start the api and database services that will run and seed the PostgreSQL database
     * serve the server on port 3000 (http://localhost:3000)
 * Similarly, run `bash _scripts/startTest.sh` to run the tests      
 
@@ -99,13 +99,13 @@ http://localhost:3000/habits/:id |  `DELETE` | creates delete habit route |
   <img src="https://github.com/dimi-fn/breakTheHabit/blob/main/client/static/css/schema.PNG" alt="">
 </p>         
 
-To enter the postgreSQL database:
+To enter the PostgreSQL database:
 * First have the docker running based on the commands of the 'server' section
 * Open another terminal, navigate to the root project, and run:
     
         docker exec -it habit_tracker_dev_db psql -U habit_tracker habit
 
-* You can execute any sql query based on postgreSQL    
+* You can execute any sql query based on PostgreSQL    
 
 
 ## Client
@@ -116,7 +116,7 @@ To enter the postgreSQL database:
 
 ## Deployment  
 
-* Server is currently supported at `https://trackyourhabits.herokuapp.com/<api-endpoint>` but it is not working because the connection with the postgreSQL has not been successful
+* Server is currently supported at `https://trackyourhabits.herokuapp.com/<api-endpoint>` but it is not working because the connection with the PostgreSQL has not been successful
 * Client on Netlify can be found [here](https://track-your-habits.netlify.app/) although any interaction with the server will not work
 * Therefore, navigate to the [installation](#installation--usage) section in order to run the client successfully having first run the server
 
@@ -140,7 +140,7 @@ To enter the postgreSQL database:
 
 * Client test was not implemented
 * Interacting with backend via frontend, and making use of the available routes and models in the API for client
-* deployment for server, db, and client together
+* Deployment for server, db, and client together
   
 -------
 
