@@ -116,7 +116,7 @@ To enter the postgreSQL database:
 
 ## Deployment  
 
-* Server is currently supported at https://trackyourhabits.herokuapp.com/`<api-endpoint>` but it is not working because the connection with the postgreSQL has not been successful
+* Server is currently supported at `https://trackyourhabits.herokuapp.com/<api-endpoint>` but it is not working because the connection with the postgreSQL has not been successful
 * Client on Netlify can be found [here](https://track-your-habits.netlify.app/) although any interaction with the server will not work
 * Therefore, navigate to the [installation](#installation--usage) section in order to run the client successfully having first run the server
 
