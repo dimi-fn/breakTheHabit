@@ -15,7 +15,7 @@ Contents
     * [Run the Server](#run-the-server)
     * [Stop the Server](#stop-the-server)
   * [Database](#database)
-  * [Client](#cliet)
+  * [Client](#client)
 * [Technologies](#technologies)
 * [Wins & Challenges](#wins--challenges)
 * [Licence](#licence)
@@ -94,6 +94,10 @@ http://localhost:3000/habits/:id |  `DELETE` | creates delete habit route |
 
 ## Database
 
+<p align="center">
+  <img src="https://github.com/dimi-fn/breakTheHabit/blob/main/client/static/css/schema.PNG" alt="">
+</p>         
+
 To enter the postgreSQL database:
 * First have the docker running based on the commands of the 'server' section
 * Open another terminal, navigate to the root project, and run:
@@ -107,11 +111,7 @@ To enter the postgreSQL database:
 
 * Once server is running, open index.html file on browser by:
     * Navigating to http://localhost:8080 through the browser search bar, or
-    * Using live server with VS Code: Right click on index.html in the client folder and select *Open with Live Server* (you might need to have installed the respective live server VS Code extention)    
-
-<p align="center">
-  <img src="https://github.com/dimi-fn/breakTheHabit/blob/main/client/static/css/schema.PNG" alt="">
-</p>                
+    * Using live server with VS Code: Right click on index.html in the client folder and select *Open with Live Server* (you might need to have installed the respective live server VS Code extention)           
 
 --------
 
