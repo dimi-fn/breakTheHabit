@@ -1,6 +1,6 @@
 # Habit Tracker
 
-Contributors: [OksAde](https://github.com/OksAde), [dimi-fn](https://github.com/dimi-fn), [warak3inab](warak3inab), [ArvinJhurry](https://github.com/ArvinJhurry)  
+Contributors: [OksAde](https://github.com/OksAde), [dimi-fn](https://github.com/dimi-fn), [warak3inab](https://github.com/warak3inab), [ArvinJhurry](https://github.com/ArvinJhurry)  
 
 Contents 
 ==========================
