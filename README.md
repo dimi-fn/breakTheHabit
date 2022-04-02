@@ -132,7 +132,11 @@ To enter the postgreSQL database:
 ## Challenges
 
 * Client test was not implemented
-* interacting with backend via frontend, and making use of the available routes and models in the API for client
+* Interacting with backend via frontend, and making use of the available routes and models in the API for client
+* Deployment
+  * currently at https://trackyourhabits.herokuapp.com/<api-endpoint> but not working because the connection with the postgreSQL has not been successful
+  * client on Netlify can be found here although any interaction with the server will not work
+  * therefore navigate to [installation](#installation--usage) to run the client along with the server
 
 -------
 
