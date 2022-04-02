@@ -74,14 +74,19 @@ function editHabit(g,x){
         document.getElementById(`progressBar${x}`).value += result
         let progressText = document.getElementById(`progText${x}`)
         console.log(`progressBar${x}`)
-        progVal += result;
+        progVal += Math.round(result);
         if(progVal > 100){
+            result = Math.abs(100-progVal);
+            progressText.innerHTML = `You surpassed your goal by ${result}%`
             progVal = 100
-            progressText.innerHTML = `You surpassed your goal by ${100-progVal}%`
+            
         }
-        progressText.innerHTML = progVal + "%"
-        console.log("progval: "+progVal)
-        console.log("result: "+result)
+        else{
+            progressText.innerHTML = progVal + "%"
+            console.log("progval: "+progVal)
+            console.log("result: "+result)
+        }
+        
     })
 }
 habitButton.addEventListener("click",AddRow);
@@ -92,6 +97,14 @@ logoutBtn.addEventListener('click', () => {
     localStorage.clear();
 })
 
+
+let greeting = document.getElementById('showUsername')
+
+
+greeting.innerHTML = `Hello ${localStorage.getItem('username')}!`
+console.log(localStorage.getItem('username')) 
+
+    
 
 /*
 const addHabitForBackEnd = document.getElementById("addHabitBtn");

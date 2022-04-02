@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 // const serverPath = `http://localhost:3000`;
 const serverPath = `https://trackyourhabits.herokuapp.com`;
 
+=======
+const serverPath = `http://localhost:3000`;
+>>>>>>> copy-main
 
 // get all users or habits
 // change category to "users" or "habits"
@@ -60,7 +64,7 @@ async function postHabit(e){
 async function deleteHabit(id){
     try {
         const options = { method: 'DELETE' }
-        await fetch(`${serverPath}/${id}`, options);
+        await fetch(`${serverPath}/habits/${id}`, options);
         window.location.hash = `#books`
     } catch (err) {
         console.warn(err);
