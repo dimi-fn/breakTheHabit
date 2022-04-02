@@ -16,6 +16,7 @@ Contents
     * [Stop the Server](#stop-the-server)
   * [Database](#database)
   * [Client](#client)
+  * [Deployment](#deployment)
 * [Technologies](#technologies)
 * [Wins & Challenges](#wins--challenges)
 * [Licence](#licence)
@@ -111,7 +112,13 @@ To enter the postgreSQL database:
 
 * Once server is running, open index.html file on browser by:
     * Navigating to http://localhost:8080 through the browser search bar, or
-    * Using live server with VS Code: Right click on index.html in the client folder and select *Open with Live Server* (you might need to have installed the respective live server VS Code extention)           
+    * Using live server with VS Code: Right click on index.html in the client folder and select *Open with Live Server* (you might need to have installed the respective live server VS Code extention)        
+
+## Deployment  
+
+* Server is currently supported at https://trackyourhabits.herokuapp.com/`<api-endpoint>` but it is not working because the connection with the postgreSQL has not been successful
+* Client on Netlify can be found [here](https://track-your-habits.netlify.app/) although any interaction with the server will not work
+* Therefore, navigate to the [installation](#installation--usage) section in order to run the client successfully having first run the server
 
 --------
 
@@ -133,11 +140,8 @@ To enter the postgreSQL database:
 
 * Client test was not implemented
 * Interacting with backend via frontend, and making use of the available routes and models in the API for client
-* Deployment
-  * currently at https://trackyourhabits.herokuapp.com/<api-endpoint> but not working because the connection with the postgreSQL has not been successful
-  * client on Netlify can be found [here](https://track-your-habits.netlify.app/) although any interaction with the server will not work
-  * therefore navigate to [installation](#installation--usage) to run the client along with the server
-
+* deployment for server, db, and client together
+  
 -------
 
 # MIT Licence
